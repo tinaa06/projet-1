@@ -23,7 +23,12 @@ class EmployerType extends AbstractType
             ->add('adresse')
             ->add('poste')
             ->add('salaire')
-            ->add('datedenaissance', DateType::class)
+            ->add('datedenaissance', DateType::class, array(
+                'widget' => 'choice',
+                'years' => range(date('Y')-70, date('Y-14')),
+                'format' => 'dd-MM-yyyy',
+              ));
+
             
 
         ;
