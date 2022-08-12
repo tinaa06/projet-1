@@ -48,7 +48,7 @@ class Employes
     private ?string $poste = null;
 
     #[ORM\Column]
-    #[Assert\Length(min:4, max:255, minMessage: "pas assez de caractères. il faut au moins {{ limit }} caractères")]
+    #[Assert\Type("float")]
     #[Assert\NotBlank(message : "Ce champ ne doit pas etre vide")]
     private ?float $salaire = null;
 
