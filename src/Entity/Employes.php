@@ -48,7 +48,7 @@ class Employes
     private ?string $poste = null;
 
     #[ORM\Column]
-    #[Assert\Type("float")]
+    #[Assert\Regex(pattern:"/^[0-9]+$/")]
     #[Assert\NotBlank(message : "Ce champ ne doit pas etre vide")]
     private ?float $salaire = null;
 
