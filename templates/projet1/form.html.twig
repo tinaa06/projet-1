@@ -1,0 +1,97 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+
+<h1>
+{% if editMode %}
+Modification de l'article
+    
+{% else %}
+Création d'un article
+    
+{% endif %}
+</h1>
+
+{{ form_start(formEmployes, {
+   attr:{
+    novalidate: 'novalidate'
+    }
+}) }} 
+
+
+{{ form_row(formEmployes.nom, {
+    label: "Nom",
+    attr: {
+        placeholder: " Nom"
+    }
+}) }}
+
+
+{{ form_row(formEmployes.prenom, {
+    label: "Prenom",
+    attr: {
+        placeholder: "Prenom"
+    }
+}) }}
+
+
+{{ form_row(formEmployes.telephone, {
+    label: "Telephone",
+    attr: {
+        placeholder: "EXP 06 57 48 39 00"
+    }
+}) }}
+
+{{ form_row(formEmployes.email, {
+    label: "Email",
+    attr: {
+        placeholder: "Email@gmail.com"
+    }
+}) }}
+
+{{ form_row(formEmployes.adresse, {
+    label: "Adresse",
+    attr: {
+        placeholder: "Adresse"
+    }
+}) }}
+
+{{ form_row(formEmployes.poste, {
+    label: "Poste",
+    attr: {
+        placeholder: "dev "
+    }
+}) }}
+
+
+{{ form_row(formEmployes.salaire, {
+    label: "Salaire",
+    attr: {
+        placeholder: "Salaire "
+    }
+}) }}
+
+
+{{ form_row(formEmployes.datedenaissance, {
+    label: "Datedenaissance",
+    attr: {
+        placeholder: "d/m/y"
+    }
+}) }}
+
+
+
+<button type="submit" class="btn btn-primary mt-2">
+{% if editMode %}
+   Enregistrer les modifications 
+{% else %}
+   Ajouter un emploiyer 
+{% endif %}
+
+</button>
+
+
+{{ form_end(formEmployes) }}
+<a href=" {{path('app_projet1') }} " class="btn btn-primary mt-5">Retour</a>
+
+{% endblock %}
