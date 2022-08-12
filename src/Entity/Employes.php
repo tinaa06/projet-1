@@ -53,8 +53,7 @@ class Employes
     private ?float $salaire = null;
 
     #[ORM\Column(type: Types::DATE_MUTABLE)]
-    #[Assert\Length(min:5, max:255, minMessage: "modifier la date ")]
-    #[Assert\NotBlank(message : "Ce champ ne doit pas etre vide")]
+   
     private ?\DateTimeInterface $datedenaissance = null;
 
     public function getId(): ?int
